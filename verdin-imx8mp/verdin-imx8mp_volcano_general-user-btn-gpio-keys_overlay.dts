@@ -1,0 +1,43 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+
+// General btn on Embtech Volcano base board.
+
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+#include <dt-bindings/leds/common.h>
+#include <dt-bindings/../../arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h>
+
+/ {
+	compatible = "toradex,verdin-imx8mp";
+};
+
+&{/} {
+        btn {
+		compatible = "gpio-keys";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_user_btn>;
+
+		/* SODIMM 54 - General use button */
+		btn0 {
+			label = "btn";
+			gpios = <&gpio3 1 GPIO_ACTIVE_HIGH>;
+			linux,code = <108>;
+			debounce-interval = <10>;
+		};
+	};
+};
+
+&flexspi {
+	status = "disabled";
+};
+
+&iomuxc {
+        pinctrl_user_btn: volcanobtn {
+                fsl,pins = <
+                        MX8MP_IOMUXC_NAND_CE0_B__GPIO3_IO01     0x106   /* SODIMM 54 */
+                >;
+        };
+};
