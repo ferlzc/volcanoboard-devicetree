@@ -21,7 +21,7 @@
 &iomuxc {
         pinctrl_user_btn: volcanobtn {
                 fsl,pins = <
-                        MX8MM_IOMUXC_NAND_CE0_B_GPIO3_IO01     0x106   /* SODIMM 54 */
+                        MX8MM_IOMUXC_NAND_CE0_B_GPIO3_IO1     0x106   /* SODIMM 54 */
                 >;
         };
 };
