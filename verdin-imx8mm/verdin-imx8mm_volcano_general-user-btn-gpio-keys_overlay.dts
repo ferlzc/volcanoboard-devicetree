@@ -8,7 +8,7 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/interrupt-controller/irq.h>
 #include <dt-bindings/leds/common.h>
-#include <dt-bindings/../../arch/arm64/boot/dts/freescale/imx8mp-pinfunc.h>
+#include <dt-bindings/../../arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h>
 
 / {
 	compatible = "toradex,verdin-imx8mm";
@@ -37,7 +37,7 @@
 &iomuxc {
         pinctrl_user_btn: volcanobtn {
                 fsl,pins = <
-                        MX8MM_IOMUXC_NAND_CE0_B__GPIO3_IO01     0x106   /* SODIMM 54 */
+                        MX8MM_IOMUXC_NAND_CE0_B_GPIO3_IO1     0x106   /* SODIMM 54 */
                 >;
         };
 };
